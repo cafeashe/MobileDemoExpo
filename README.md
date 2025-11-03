@@ -4,6 +4,12 @@
 ### Descripción
 Esta aplicación fue desarrollada con el fin de explorar el framework Expo. No tiene ningún fin de lucro y es de carácter educativo.
 
+Problema: Inicialmente intenté una app con Ionic/Angular. Mezclé componentes standalone con archivos generados para NgModules y empezaron errores como “is not a known element” (ion-header, ion-button) y “Component X is standalone, and cannot be declared in an NgModule”. También aparecieron avisos por *ngIf/ngModel cuando faltaban CommonModule/FormsModule, y errores de lazy loading tipo m.LoginPageModule / m.HomePageModule no encontrados.
+
+Qué aprendí: En Angular hay que elegir un solo enfoque: o todo Standalone, o todo con NgModules. Además, si usas plantillas con *ngIf/[(ngModel)] debes importar explícitamente CommonModule y FormsModule.
+
+Solución: Para evitar seguir peleando con la configuración, cambié de stack a React Native + Expo con Expo Router, que se ajusta perfecto a los requerimientos móviles y simplifica el ruteo y la organización. Con esto eliminé los conflictos de módulos/standalone y avancé más rápido.
+
 ### Características
 ✅ Framework: React Native con Expo
 
